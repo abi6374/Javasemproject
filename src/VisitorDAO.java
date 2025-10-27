@@ -13,12 +13,11 @@ public class VisitorDAO {
             stmt.setString(2, v.getPurpose());
             stmt.setString(3, v.getContact());
             stmt.executeUpdate();
-            System.out.println("✅ Visitor added successfully!");
+            System.out.println("Visitor added successfully!");
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-
     // READ - all visitors
     public List<Visitor> getAllVisitors() {
         List<Visitor> list = new ArrayList<>();
@@ -41,7 +40,7 @@ public class VisitorDAO {
         return list;
     }
 
-    // READ - by ID
+//reading by ID
     public Visitor getVisitorById(int id) {
         String sql = "SELECT * FROM visitors WHERE id = ?";
         try (Connection conn = DBConnection.getConnection();
@@ -63,8 +62,7 @@ public class VisitorDAO {
         }
         return null;
     }
-
-    // UPDATE
+//    Updating the visitor
     public void updateVisitor(int id, String name, String purpose, String contact) {
         String sql = "UPDATE visitors SET name = ?, purpose = ?, contact = ? WHERE id = ?";
         try (Connection conn = DBConnection.getConnection();
@@ -74,8 +72,8 @@ public class VisitorDAO {
             stmt.setString(3, contact);
             stmt.setInt(4, id);
             int rows = stmt.executeUpdate();
-            if (rows > 0) System.out.println("✅ Visitor updated successfully!");
-            else System.out.println("⚠️ No visitor found with ID " + id);
+            if (rows > 0) System.out.println("Visitor updated successfully!");
+            else System.out.println("No visitor found with ID " + id);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -88,14 +86,14 @@ public class VisitorDAO {
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setInt(1, id);
             int rows = stmt.executeUpdate();
-            if (rows > 0) System.out.println("✅ Visitor deleted successfully!");
-            else System.out.println("⚠️ No visitor found with ID " + id);
+            if (rows > 0) System.out.println("Visitor deleted successfully!");
+            else System.out.println("️ No visitor found with ID " + id);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    // SEARCH by name or purpose
+    // Search by name or purpose
     public List<Visitor> searchVisitors(String keyword) {
         List<Visitor> list = new ArrayList<>();
         String sql = "SELECT * FROM visitors WHERE name LIKE ? OR purpose LIKE ?";
@@ -120,3 +118,4 @@ public class VisitorDAO {
         return list;
     }
 }
+

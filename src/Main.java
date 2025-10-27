@@ -7,7 +7,7 @@ public class Main {
         VisitorDAO dao = new VisitorDAO();
 
         while (true) {
-            System.out.println("\n=== Visitor Log Management ===");
+            System.out.println("\n====== Visitor Log Management ======");
             System.out.println("1. Add Visitor");
             System.out.println("2. View All Visitors");
             System.out.println("3. Search Visitors");
@@ -17,7 +17,6 @@ public class Main {
             System.out.print("Enter your choice: ");
             int ch = sc.nextInt();
             sc.nextLine();
-
             switch (ch) {
                 case 1:
                     System.out.print("Enter Visitor Name: ");
@@ -32,7 +31,7 @@ public class Main {
                 case 2:
                     List<Visitor> visitors = dao.getAllVisitors();
                     System.out.println("\nID   | Name            | Purpose             | Contact        | Check-in Time");
-                    System.out.println("----------------------------------------------------------------------------");
+                    System.out.println("--------------------------------------------------------------------------------");
                     for (Visitor v : visitors) System.out.println(v);
                     break;
 
