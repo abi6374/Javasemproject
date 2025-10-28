@@ -28,13 +28,3 @@ java -cp out Main
 Notes:
 - If your sources use packages, you may need to adjust the `javac`/`java` commands accordingly.
 - If the app requires a database, ensure DB settings in `DBConnection.java` are set before running.
-
-## Quick tips
-
-- Want to rebuild? Remove the `out` directory and re-run the commands above.
-- To see what each class does, open the corresponding `.java` file in `src` — they're compact and easy to read.
-
-If you'd like, I can add a small script to automate build/run steps or expand this README with examples and expected output.
-
----
-Humanized by you — short, useful, and to the point.
