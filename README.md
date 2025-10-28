@@ -2,7 +2,7 @@
 
 A small, friendly Java console project for tracking visitor information.
 
-This README is intentionally short and humanized — just enough to help you (or the next person) get the project running quickly.
+This README is intentionally short — just enough to help you (or the next person) get the project running quickly.
 
 ## What this is
 
